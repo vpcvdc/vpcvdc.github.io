@@ -1,0 +1,33 @@
+{
+ "phrases": [
+  {
+   "hashToText": {
+    "78Bct3lYBaLJT11KO9UvtA==": "I am doing Sport activity and Software programming."
+   },
+   "filepath": "src/components/Section.js",
+   "line_beg": 42,
+   "col_beg": 15,
+   "line_end": 42,
+   "col_end": 89,
+   "desc": "into",
+   "project": "",
+   "type": "text",
+   "jsfbt": "I am doing Sport activity and Software programming."
+  },
+  {
+   "hashToText": {
+    "ZQC/ZA+VR82AgtTURmZAXg==": "Perakash Chakravarthy Velusamy"
+   },
+   "filepath": "src/components/Section.js",
+   "line_beg": 47,
+   "col_beg": 14,
+   "line_end": 47,
+   "col_end": 67,
+   "desc": "name",
+   "project": "",
+   "type": "text",
+   "jsfbt": "Perakash Chakravarthy Velusamy"
+  }
+ ],
+ "childParentMappings": {}
+}

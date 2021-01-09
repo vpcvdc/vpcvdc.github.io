@@ -2,11 +2,13 @@ import { memo } from 'react';
 import Github from '../icons/Github';
 import Youtube from '../icons/Youtube';
 import SwitchTheme from './SwitchTheme';
+import SwitchLocale from './SwitchLocale';
 
 export default memo(function Header() {
   return (
     <header className='p-4 flex items-center justify-end'>
       <nav className='space-x-4 inline-flex items-center'>
+        <SwitchLocale />
         <a
           href='//github.com/vpcvdc'
           target="_blank"

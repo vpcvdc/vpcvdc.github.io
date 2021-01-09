@@ -6,14 +6,29 @@ export default function useLocale() {
     const translations = (locale === 'en') ? ({ en: {} }) : await import(`../locales/${locale}.json`)
     setState(state => ({
       ...state,
-      locale,
+      context: {
+        ...state.context,
+        locale,
+      },
       translations,
     }));
   }, []);
+  const setContext = useCallback(async context => {
+    setState(state => ({
+      ...state,
+      context: {
+        ...state.context,
+        context,
+      },
+    }));
+  }, []);
   const [state, setState] = useState(() => ({
-    locale: 'en',
+    context: {
+      locale: 'en',
+    },
     translations: { en: {} },
     switchLocale,
+    setContext,
   }));
   useEffect(() => {
     async function init() {
@@ -26,13 +41,9 @@ export default function useLocale() {
   }, [switchLocale]);
   useEffect(() => {
     const html = document.documentElement;
-    const locale = LOCALES[state.locale];
+    const locale = LOCALES[state.context.locale];
     html.lang = locale.bcp47;
-    if (locale.rtl) {
-      html.dir = 'rtl';
-    } else {
-      html.dir = 'ltr';
-    }
-  }, [state.locale]);
+    html.dir = locale.rtl ? 'rtl' : 'ltr';
+  }, [state.context.locale]);
   return state;
 }

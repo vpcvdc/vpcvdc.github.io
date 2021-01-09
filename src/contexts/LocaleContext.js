@@ -1,9 +1,12 @@
 import { createContext, useContext } from 'react';
 
 const LocaleContext = createContext({
-  locale: 'en',
+  context: {
+    locale: 'en',
+  },
   translations: { en: {} },
   switchLocale: () => { },
+  setContext: () => { },
 });
 
 export default function LocaleContextProvider({ children, locale }) {
