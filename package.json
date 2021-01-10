@@ -6,8 +6,10 @@
   "dependencies": {
     "@headlessui/react": "0.2.0",
     "fbt": "0.16.1",
+    "history": "5.0.0",
     "react": "0.0.0-experimental-3310209d0",
     "react-dom": "0.0.0-experimental-3310209d0",
+    "react-router-dom": "0.0.0-experimental-ffd8c7d0",
     "web-vitals": "1.0.1",
     "workbox-background-sync": "6.0.2",
     "workbox-broadcast-update": "6.0.2",
