@@ -5,23 +5,33 @@ import Img from './Img';
 import Link from './Link';
 
 export default memo(function Section() {
-  useLocaleContext();
+  const { context: { locale } } = useLocaleContext();
   useEffect(() => {
+    document.title = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
+    document.head.querySelector('meta[name="description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
+    document.head.querySelector('meta[property="og:title"]').content = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
+    document.head.querySelector('meta[property="og:description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
+    document.head.querySelector('meta[property="og:site_name"]').content = fbt("VPC", "nickname");
+    document.head.querySelector('meta[property="og:image:alt"]').content = fbt("VPC", "nickname");
+    document.head.querySelector('meta[property="og:locale"]').content = locale;
     const jsonld = document.createElement('script');
-    jsonld.setAttribute('type', 'application/ld+json');
+    jsonld.type = 'application/ld+json';
     jsonld.textContent = JSON.stringify({
       "@context": "https://schema.org/",
       "@type": "Person",
-      "name": "Perakash Chakravarthy Velusamy",
-      "jobTitle": "Software Engineer",
+      "gender": "Male",
+      "name": fbt("Perakash Chakravarthy Velusamy", "name"),
+      "description": fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description"),
+      "alternateName": fbt("VPC", "nickname"),
+      "jobTitle": fbt("Software Engineer", "jobTitle"),
       "email": "vpcvdc@hotmail.com",
       "telephone": "+91 94434 02687",
       "url": `${process.env.REACT_APP_URL}/`,
-      "image": "https://github.com/vpcvdc.png"
+      "image": "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);
     return () => document.head.removeChild(jsonld);
-  }, []);
+  }, [locale]);
   return (
     <section className='p-4 flex-grow flex items-center justify-center'>
       <figure className="w-full mx-auto max-w-xl sm:flex bg-gray-50 dark:bg-gray-800 rounded-xl p-8 sm:p-0 overflow-hidden">
@@ -39,7 +49,7 @@ export default memo(function Section() {
         <div className="flex-auto pt-6 sm:p-8 text-center sm:text-left space-y-6">
           <blockquote>
             <p className="text-lg font-semibold">
-              “<fbt desc="into">I am doing Sport activity and Software programming.</fbt>”
+              “<fbt desc="intro">I am doing Sport activity and Software programming.</fbt>”
             </p>
           </blockquote>
           <figcaption className="font-medium space-y-2">

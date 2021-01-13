@@ -19,7 +19,7 @@ export default memo(function SwitchLocale() {
         aria-label="switch locale"
       >
         {Object.entries(LOCALES).map(([key, value]) => (
-          <option key={key} value={key}>
+          <option key={key} value={value.bcp47}>
             {value.displayName}
           </option>
         ))}

@@ -2,7 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { LOCALES } from '../contexts/LocaleContext';
 
 export default function useLocale() {
-  const switchLocale = useCallback(async locale => {
+  const switchLocale = useCallback(async language => {
+    const found = Object.values(LOCALES).find(locale => locale.bcp47.toLowerCase() === language);
+    const locale = found?.localeName ?? 'en';
     const translations = (locale === 'en') ? ({ en: {} }) : await import(`../locales/${locale}.json`)
     setState(state => ({
       ...state,
@@ -31,13 +33,10 @@ export default function useLocale() {
     setContext,
   }));
   useEffect(() => {
-    async function init() {
+    (async function init() {
       const language = window.navigator?.language?.toLowerCase() ?? 'en';
-      const found = Object.values(LOCALES).find(locale => locale.bcp47.toLowerCase() === language);
-      const locale = found?.localeName ?? 'en';
-      await switchLocale(locale);
-    }
-    init();
+      await switchLocale(language);
+    })();
   }, [switchLocale]);
   useEffect(() => {
     const html = document.documentElement;

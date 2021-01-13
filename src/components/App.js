@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { init } from 'fbt';
-import { Routes, Route } from "react-router-dom";
 import ThemeContextProvider from '../contexts/ThemeContext';
 import LocaleContextProvider from '../contexts/LocaleContext';
 import useTheme from '../hooks/useTheme';
@@ -19,9 +18,7 @@ export default memo(function App() {
   return (
     <ThemeContextProvider theme={theme}>
       <LocaleContextProvider locale={locale}>
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
+        <Main />
       </LocaleContextProvider>
     </ThemeContextProvider>
   );
