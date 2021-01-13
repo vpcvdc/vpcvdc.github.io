@@ -1,11 +1,14 @@
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LOCALES, useLocaleContext } from '../contexts/LocaleContext';
 import Translate from '../icons/Translate';
 
 export default memo(function SwitchLocale() {
+  const navigate = useNavigate();
   const { context: { locale }, switchLocale } = useLocaleContext();
   const handleChange = ({ target: { value } }) => {
     switchLocale(value);
+    navigate(value === 'en' ? '/' : `/${value}`);
   };
   return (
     <div className="relative">
