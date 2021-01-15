@@ -14,6 +14,9 @@ export default memo(function Section() {
     document.head.querySelector('meta[property="og:site_name"]').content = fbt("VPC", "nickname");
     document.head.querySelector('meta[property="og:image:alt"]').content = fbt("VPC", "nickname");
     document.head.querySelector('meta[property="og:locale"]').content = locale;
+    const url = `${process.env.REACT_APP_URL}/${locale === 'en' ? '' : `?/${locale}`}`;
+    document.head.querySelector('meta[property="og:url"]').content = url;
+    document.head.querySelector('link[rel="canonical"]').href = url;
     const jsonld = document.createElement('script');
     jsonld.type = 'application/ld+json';
     jsonld.textContent = JSON.stringify({
@@ -26,7 +29,7 @@ export default memo(function Section() {
       "jobTitle": fbt("Software Engineer", "jobTitle"),
       "email": "vpcvdc@hotmail.com",
       "telephone": "+91 94434 02687",
-      "url": `${process.env.REACT_APP_URL}/`,
+      "url": url,
       "image": "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);
