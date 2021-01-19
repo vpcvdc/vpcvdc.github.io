@@ -7,15 +7,6 @@ export default class ErrorBoundary extends Component {
     return { error: error };
   }
 
-  componentDidCatch(error) {
-    if (window.gtag) {
-      window.gtag('event', 'exception', {
-        'description': error.message,
-        'fatal': true,
-      });
-    }
-  }
-
   _retry = () => {
     this.setState({ error: null });
   };

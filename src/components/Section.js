@@ -1,6 +1,6 @@
 import { memo, useEffect } from 'react';
 import fbt from 'fbt';
-import { useLocaleContext } from '../contexts/LocaleContext';
+import { useLocaleContext, LOCALES } from '../contexts/LocaleContext';
 import Img from './Img';
 import Link from './Link';
 
@@ -13,10 +13,7 @@ export default memo(function Section() {
     document.head.querySelector('meta[property="og:description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
     document.head.querySelector('meta[property="og:site_name"]').content = fbt("VPC", "nickname");
     document.head.querySelector('meta[property="og:image:alt"]').content = fbt("VPC", "nickname");
-    document.head.querySelector('meta[property="og:locale"]').content = locale;
-    const url = `${process.env.REACT_APP_URL}/${locale === 'en' ? '' : `?/${locale}`}`;
-    document.head.querySelector('meta[property="og:url"]').content = url;
-    document.head.querySelector('link[rel="canonical"]').href = url;
+    document.head.querySelector('meta[property="og:locale"]').content = LOCALES[locale].bcp47;
     const jsonld = document.createElement('script');
     jsonld.type = 'application/ld+json';
     jsonld.textContent = JSON.stringify({
@@ -29,7 +26,7 @@ export default memo(function Section() {
       "jobTitle": fbt("Software Engineer", "jobTitle"),
       "email": "vpcvdc@hotmail.com",
       "telephone": "+91 94434 02687",
-      "url": url,
+      "url": `${process.env.REACT_APP_URL}/`,
       "image": "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);

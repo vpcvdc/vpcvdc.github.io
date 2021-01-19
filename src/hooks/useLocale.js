@@ -3,7 +3,7 @@ import { LOCALES } from '../contexts/LocaleContext';
 
 export default function useLocale() {
   const switchLocale = useCallback(async language => {
-    const found = Object.values(LOCALES).find(locale => locale.bcp47.toLowerCase() === language);
+    const found = Object.values(LOCALES).find(locale => locale.bcp47.toLowerCase() === language.toLowerCase());
     const locale = found?.localeName ?? 'en';
     const translations = (locale === 'en') ? ({ en: {} }) : await import(`../locales/${locale}.json`)
     setState(state => ({

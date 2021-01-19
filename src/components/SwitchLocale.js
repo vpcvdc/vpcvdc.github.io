@@ -1,14 +1,14 @@
 import { memo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { LOCALES, useLocaleContext } from '../contexts/LocaleContext';
 import Translate from '../icons/Translate';
 
 export default memo(function SwitchLocale() {
-  const navigate = useNavigate();
+  const [, setSearchParams] = useSearchParams({ lang: 'en' });
   const { context: { locale }, switchLocale } = useLocaleContext();
   const handleChange = ({ target: { value } }) => {
     switchLocale(value);
-    navigate(value === 'en' ? '/' : `/${value}`);
+    setSearchParams({ lang: value });
   };
   return (
     <div className="relative">
@@ -16,7 +16,7 @@ export default memo(function SwitchLocale() {
         <Translate className="h-5" />
       </div>
       <select
-        value={locale}
+        value={LOCALES[locale].bcp47}
         onChange={handleChange}
         className="py-2 px-10 block w-full border-0 focus:ring-0 bg-transparent"
         aria-label="switch locale"
