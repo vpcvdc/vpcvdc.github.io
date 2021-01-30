@@ -13,7 +13,10 @@ export default memo(function Section() {
     document.head.querySelector('meta[property="og:description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
     document.head.querySelector('meta[property="og:site_name"]').content = fbt("VPC", "nickname");
     document.head.querySelector('meta[property="og:image:alt"]').content = fbt("VPC", "nickname");
-    document.head.querySelector('meta[property="og:locale"]').content = LOCALES[locale].bcp47;
+    const { bcp47 } = LOCALES[locale];
+    document.head.querySelector('meta[property="og:locale"]').content = bcp47;
+    document.head.querySelector('meta[property="og:url"]').content = `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`;
+    document.head.querySelector('link[rel="canonical"]').href = `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`;
     const jsonld = document.createElement('script');
     jsonld.type = 'application/ld+json';
     jsonld.textContent = JSON.stringify({
@@ -26,7 +29,7 @@ export default memo(function Section() {
       "jobTitle": fbt("Software Engineer", "jobTitle"),
       "email": "vpcvdc@hotmail.com",
       "telephone": "+91 94434 02687",
-      "url": `${process.env.REACT_APP_URL}/`,
+      "url": `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`,
       "image": "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);
