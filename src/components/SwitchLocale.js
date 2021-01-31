@@ -1,14 +1,11 @@
 import { memo } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { LOCALES, useLocaleContext } from '../contexts/LocaleContext';
 import Translate from '../icons/Translate';
 
 export default memo(function SwitchLocale() {
-  const [, setSearchParams] = useSearchParams({ lang: 'en' });
   const { context: { locale }, switchLocale } = useLocaleContext();
   const handleChange = ({ target: { value } }) => {
     switchLocale(value);
-    setSearchParams({ lang: value });
   };
   return (
     <div className="relative">

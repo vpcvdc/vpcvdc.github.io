@@ -1,39 +1,32 @@
 import { memo, useEffect } from 'react';
 import fbt from 'fbt';
-import { useLocaleContext, LOCALES } from '../contexts/LocaleContext';
+import { useLocaleContext } from '../contexts/LocaleContext';
 import Img from './Img';
 import Link from './Link';
 
 export default memo(function Section() {
   const { context: { locale } } = useLocaleContext();
   useEffect(() => {
-    document.title = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
-    document.head.querySelector('meta[name="description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
-    document.head.querySelector('meta[property="og:title"]').content = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
-    document.head.querySelector('meta[property="og:description"]').content = fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description");
-    document.head.querySelector('meta[property="og:site_name"]').content = fbt("VPC", "nickname");
-    document.head.querySelector('meta[property="og:image:alt"]').content = fbt("VPC", "nickname");
-    const { bcp47 } = LOCALES[locale];
-    document.head.querySelector('meta[property="og:locale"]').content = bcp47;
-    document.head.querySelector('meta[property="og:url"]').content = `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`;
-    document.head.querySelector('link[rel="canonical"]').href = `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`;
     const jsonld = document.createElement('script');
     jsonld.type = 'application/ld+json';
     jsonld.textContent = JSON.stringify({
       "@context": "https://schema.org/",
       "@type": "Person",
       "gender": "Male",
-      "name": fbt("Perakash Chakravarthy Velusamy", "name"),
-      "description": fbt("Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.", "description"),
-      "alternateName": fbt("VPC", "nickname"),
-      "jobTitle": fbt("Software Engineer", "jobTitle"),
+      "name": "Perakash Chakravarthy Velusamy",
+      "description": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.",
+      "alternateName": "VPC",
+      "jobTitle": "Software Engineer",
       "email": "vpcvdc@hotmail.com",
       "telephone": "+91 94434 02687",
-      "url": `${process.env.REACT_APP_URL}${bcp47 === 'en' ? '/' : `/?lang=${bcp47}`}`,
+      "url": `${process.env.REACT_APP_URL}/`,
       "image": "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);
     return () => document.head.removeChild(jsonld);
+  }, []);
+  useEffect(() => {
+    document.title = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
   }, [locale]);
   return (
     <section className='p-4 flex-grow flex items-center justify-center'>

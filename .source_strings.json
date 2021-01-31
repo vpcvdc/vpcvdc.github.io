@@ -5,9 +5,9 @@
     "J/JNTfwf9wZ6QQktcQsP0A==": "Perakash Chakravarthy Velusamy - VPC"
    },
    "filepath": "src/components/Section.js",
-   "line_beg": 10,
+   "line_beg": 29,
    "col_beg": 21,
-   "line_end": 10,
+   "line_end": 29,
    "col_end": 73,
    "desc": "title",
    "project": "",
@@ -16,138 +16,12 @@
   },
   {
    "hashToText": {
-    "siAYW5oDYvWNp65ocZssPg==": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 11,
-   "col_beg": 70,
-   "line_end": 11,
-   "col_end": 179,
-   "desc": "description",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-  },
-  {
-   "hashToText": {
-    "J/JNTfwf9wZ6QQktcQsP0A==": "Perakash Chakravarthy Velusamy - VPC"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 12,
-   "col_beg": 71,
-   "line_end": 12,
-   "col_end": 123,
-   "desc": "title",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Perakash Chakravarthy Velusamy - VPC"
-  },
-  {
-   "hashToText": {
-    "siAYW5oDYvWNp65ocZssPg==": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 13,
-   "col_beg": 77,
-   "line_end": 13,
-   "col_end": 186,
-   "desc": "description",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-  },
-  {
-   "hashToText": {
-    "FEgX26Bm28zYG7u8DHxOBA==": "VPC"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 14,
-   "col_beg": 75,
-   "line_end": 14,
-   "col_end": 97,
-   "desc": "nickname",
-   "project": "",
-   "type": "text",
-   "jsfbt": "VPC"
-  },
-  {
-   "hashToText": {
-    "FEgX26Bm28zYG7u8DHxOBA==": "VPC"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 15,
-   "col_beg": 75,
-   "line_end": 15,
-   "col_end": 97,
-   "desc": "nickname",
-   "project": "",
-   "type": "text",
-   "jsfbt": "VPC"
-  },
-  {
-   "hashToText": {
-    "ZQC/ZA+VR82AgtTURmZAXg==": "Perakash Chakravarthy Velusamy"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 26,
-   "col_beg": 14,
-   "line_end": 26,
-   "col_end": 59,
-   "desc": "name",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Perakash Chakravarthy Velusamy"
-  },
-  {
-   "hashToText": {
-    "siAYW5oDYvWNp65ocZssPg==": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 27,
-   "col_beg": 21,
-   "line_end": 27,
-   "col_end": 130,
-   "desc": "description",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming."
-  },
-  {
-   "hashToText": {
-    "FEgX26Bm28zYG7u8DHxOBA==": "VPC"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 28,
-   "col_beg": 23,
-   "line_end": 28,
-   "col_end": 45,
-   "desc": "nickname",
-   "project": "",
-   "type": "text",
-   "jsfbt": "VPC"
-  },
-  {
-   "hashToText": {
-    "KCKXMrYh5hfci+bRDOzcIg==": "Software Engineer"
-   },
-   "filepath": "src/components/Section.js",
-   "line_beg": 29,
-   "col_beg": 18,
-   "line_end": 29,
-   "col_end": 54,
-   "desc": "jobTitle",
-   "project": "",
-   "type": "text",
-   "jsfbt": "Software Engineer"
-  },
-  {
-   "hashToText": {
     "QONJTx5uloq0tws2v+Gy4w==": "I am doing Sport activity and Software programming."
    },
    "filepath": "src/components/Section.js",
-   "line_beg": 55,
+   "line_beg": 48,
    "col_beg": 15,
-   "line_end": 55,
+   "line_end": 48,
    "col_end": 90,
    "desc": "intro",
    "project": "",
@@ -159,9 +33,9 @@
     "ZQC/ZA+VR82AgtTURmZAXg==": "Perakash Chakravarthy Velusamy"
    },
    "filepath": "src/components/Section.js",
-   "line_beg": 60,
+   "line_beg": 53,
    "col_beg": 14,
-   "line_end": 60,
+   "line_end": 53,
    "col_end": 67,
    "desc": "name",
    "project": "",
