@@ -1,14 +1,15 @@
-import { memo, Suspense } from 'react';
+import { lazy, memo, Suspense } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import ErrorUI from './ErrorUI';
 import Loader from './Loader';
-import Router from './Router';
+
+const App = lazy(() => import('./App'));
 
 export default memo(function Root() {
   return (
     <ErrorBoundary fallback={(error, retry) => <ErrorUI error={error} retry={retry} />}>
       <Suspense fallback={<Loader />}>
-        <Router />
+        <App />
       </Suspense>
     </ErrorBoundary>
   );
