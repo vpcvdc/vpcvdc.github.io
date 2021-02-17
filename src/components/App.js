@@ -43,9 +43,9 @@ export default memo(function App() {
                     href="//allyweds.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-600 bg-white hover:bg-blue-50 dark:text-white dark:bg-black dark:hover:bg-gray-900"
+                    className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-600 bg-white hover:bg-blue-50 dark:text-white dark:bg-gray-900 dark:hover:bg-black"
                   >
-                    Learn more
+                    Visit now
                 </a>
                 </div>
                 <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
