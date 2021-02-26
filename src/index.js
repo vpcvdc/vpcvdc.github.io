@@ -3,7 +3,7 @@ import { unstable_createRoot as createRoot } from "react-dom";
 import "./index.css";
 import Root from "./components/Root";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-// import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -25,4 +25,4 @@ serviceWorkerRegistration.register({
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals(console.info);
+reportWebVitals(console.log);
