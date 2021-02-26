@@ -1,12 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
-import { LOCALES } from '../contexts/LocaleContext';
+import { useCallback, useEffect, useState } from "react";
+import { LOCALES } from "../contexts/LocaleContext";
 
 export default function useLocale() {
-  const switchLocale = useCallback(async language => {
-    const found = Object.values(LOCALES).find(locale => locale.bcp47.toLowerCase() === language.toLowerCase());
-    const locale = found?.localeName ?? 'en';
-    const translations = (locale === 'en') ? ({ en: {} }) : await import(`../locales/${locale}.json`)
-    setState(state => ({
+  const switchLocale = useCallback(async (language) => {
+    const found = Object.values(LOCALES).find(
+      (locale) => locale.bcp47.toLowerCase() === language.toLowerCase()
+    );
+    const locale = found?.localeName ?? "en";
+    const translations =
+      locale === "en" ? { en: {} } : await import(`../locales/${locale}.json`);
+    setState((state) => ({
       ...state,
       context: {
         ...state.context,
@@ -15,8 +18,8 @@ export default function useLocale() {
       translations,
     }));
   }, []);
-  const setContext = useCallback(async context => {
-    setState(state => ({
+  const setContext = useCallback(async (context) => {
+    setState((state) => ({
       ...state,
       context: {
         ...state.context,
@@ -26,7 +29,7 @@ export default function useLocale() {
   }, []);
   const [state, setState] = useState(() => ({
     context: {
-      locale: 'en',
+      locale: "en",
     },
     translations: { en: {} },
     switchLocale,
@@ -34,7 +37,7 @@ export default function useLocale() {
   }));
   useEffect(() => {
     (async function init() {
-      const language = window.navigator?.language?.toLowerCase() ?? 'en';
+      const language = window.navigator?.language?.toLowerCase() ?? "en";
       await switchLocale(language);
     })();
   }, [switchLocale]);
@@ -42,7 +45,7 @@ export default function useLocale() {
     const html = document.documentElement;
     const locale = LOCALES[state.context.locale];
     html.lang = locale.bcp47;
-    html.dir = locale.rtl ? 'rtl' : 'ltr';
+    html.dir = locale.rtl ? "rtl" : "ltr";
   }, [state.context.locale]);
   return state;
 }

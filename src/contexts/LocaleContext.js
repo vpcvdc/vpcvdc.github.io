@@ -1,12 +1,12 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext } from "react";
 
 const LocaleContext = createContext({
   context: {
-    locale: 'en',
+    locale: "en",
   },
   translations: { en: {} },
-  switchLocale: () => { },
-  setContext: () => { },
+  switchLocale: () => {},
+  setContext: () => {},
 });
 
 export default function LocaleContextProvider({ children, locale }) {
@@ -19,17 +19,17 @@ export const useLocaleContext = () => useContext(LocaleContext);
 
 export const LOCALES = Object.freeze({
   ta: Object.freeze({
-    bcp47: 'ta',
-    displayName: 'தமிழ்',
-    englishName: 'Tamil',
-    localeName: 'ta',
+    bcp47: "ta",
+    displayName: "தமிழ்",
+    englishName: "Tamil",
+    localeName: "ta",
     rtl: false,
   }),
   en: Object.freeze({
-    bcp47: 'en',
-    displayName: 'English',
-    englishName: 'English',
-    localeName: 'en',
+    bcp47: "en",
+    displayName: "English",
+    englishName: "English",
+    localeName: "en",
     rtl: false,
   }),
 });

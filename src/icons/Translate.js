@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 export default memo(function Translate(props) {
   return (

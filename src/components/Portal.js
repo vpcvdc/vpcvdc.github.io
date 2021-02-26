@@ -1,9 +1,9 @@
-import { Component } from 'react';
-import { createPortal } from 'react-dom';
+import { Component } from "react";
+import { createPortal } from "react-dom";
 
-const portal = document.getElementById('portal');
+const portal = document.getElementById("portal");
 export default class Portal extends Component {
-  el = document.createElement('div');
+  el = document.createElement("div");
 
   componentDidMount() {
     portal.appendChild(this.el);

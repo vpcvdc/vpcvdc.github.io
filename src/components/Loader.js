@@ -1,5 +1,5 @@
-import { memo } from 'react';
-import Logo from '../icons/Logo';
+import { memo } from "react";
+import Logo from "../icons/Logo";
 
 export default memo(function Loader() {
   return (

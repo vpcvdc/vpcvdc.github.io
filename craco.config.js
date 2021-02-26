@@ -1,6 +1,4 @@
-'use strict';
-
-const { join } = require('path');
+const { join } = require("path");
 
 module.exports = {
   babel: {
@@ -20,10 +18,7 @@ module.exports = {
   },
   style: {
     postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
+      plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
 };

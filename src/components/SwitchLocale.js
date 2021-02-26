@@ -1,9 +1,12 @@
-import { memo } from 'react';
-import { LOCALES, useLocaleContext } from '../contexts/LocaleContext';
-import Translate from '../icons/Translate';
+import { memo } from "react";
+import { LOCALES, useLocaleContext } from "../contexts/LocaleContext";
+import Translate from "../icons/Translate";
 
 export default memo(function SwitchLocale() {
-  const { context: { locale }, switchLocale } = useLocaleContext();
+  const {
+    context: { locale },
+    switchLocale,
+  } = useLocaleContext();
   const handleChange = ({ target: { value } }) => {
     switchLocale(value);
   };

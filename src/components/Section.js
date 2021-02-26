@@ -1,26 +1,29 @@
-import { memo, useEffect } from 'react';
-import fbt from 'fbt';
-import { useLocaleContext } from '../contexts/LocaleContext';
-import Img from './Img';
-import Link from './Link';
+import { memo, useEffect } from "react";
+import fbt from "fbt";
+import { useLocaleContext } from "../contexts/LocaleContext";
+import Img from "./Img";
+import Link from "./Link";
 
 export default memo(function Section() {
-  const { context: { locale } } = useLocaleContext();
+  const {
+    context: { locale },
+  } = useLocaleContext();
   useEffect(() => {
-    const jsonld = document.createElement('script');
-    jsonld.type = 'application/ld+json';
+    const jsonld = document.createElement("script");
+    jsonld.type = "application/ld+json";
     jsonld.textContent = JSON.stringify({
       "@context": "https://schema.org/",
       "@type": "Person",
-      "gender": "Male",
-      "name": "Perakash Chakravarthy Velusamy",
-      "description": "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.",
-      "alternateName": "VPC",
-      "jobTitle": "Software Engineer",
-      "email": "vpcvdc@hotmail.com",
-      "telephone": "+91 94434 02687",
-      "url": `${process.env.REACT_APP_URL}/`,
-      "image": "https://github.com/vpcvdc.png",
+      gender: "Male",
+      name: "Perakash Chakravarthy Velusamy",
+      description:
+        "Hi! I am Perakash Chakravarthy Velusamy, doing Sport activity and Software programming.",
+      alternateName: "VPC",
+      jobTitle: "Software Engineer",
+      email: "vpcvdc@hotmail.com",
+      telephone: "+91 94434 02687",
+      url: `${process.env.REACT_APP_URL}/`,
+      image: "https://github.com/vpcvdc.png",
     });
     document.head.appendChild(jsonld);
     return () => document.head.removeChild(jsonld);
@@ -29,7 +32,7 @@ export default memo(function Section() {
     document.title = fbt("Perakash Chakravarthy Velusamy - VPC", "title");
   }, [locale]);
   return (
-    <section className='p-4 flex-grow flex items-center justify-center'>
+    <section className="p-4 flex-grow flex items-center justify-center">
       <figure className="w-full mx-auto max-w-xl sm:flex bg-gray-50 dark:bg-gray-800 rounded-xl p-8 sm:p-0 overflow-hidden">
         <div className="flex-none w-32 h-32 sm:w-48 sm:h-auto rounded-full sm:rounded-none mx-auto relative bg-gray-400 dark:bg-gray-600 overflow-hidden">
           <Img
@@ -45,7 +48,11 @@ export default memo(function Section() {
         <div className="flex-auto pt-6 sm:p-8 text-center sm:text-left space-y-6">
           <blockquote>
             <p className="text-lg font-semibold">
-              “<fbt desc="intro">I am doing Sport activity and Software programming.</fbt>”
+              “
+              <fbt desc="intro">
+                I am doing Sport activity and Software programming.
+              </fbt>
+              ”
             </p>
           </blockquote>
           <figcaption className="font-medium space-y-2">
@@ -76,14 +83,10 @@ export default memo(function Section() {
                 </span>
               </p> */}
               <p>
-                <Link href="mailto:vpcvdc@hotmail.com">
-                  vpcvdc@hotmail.com
-                </Link>
+                <Link href="mailto:vpcvdc@hotmail.com">vpcvdc@hotmail.com</Link>
               </p>
               <p>
-                <Link href="tel:+919443402687">
-                  +91 94434 02687
-                </Link>
+                <Link href="tel:+919443402687">+91 94434 02687</Link>
               </p>
             </div>
           </figcaption>

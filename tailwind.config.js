@@ -1,13 +1,8 @@
-'use strict';
-
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: [
-    './public/**/*.html',
-    './src/**/*.js',
-  ],
-  darkMode: 'class', // or 'media' or 'class'
+  purge: ["./public/**/*.html", "./src/**/*.js"],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -21,7 +16,7 @@ module.exports = {
         emerald: colors.emerald,
         teal: colors.teal,
         cyan: colors.cyan,
-        'light-blue': colors.lightBlue,
+        "light-blue": colors.lightBlue,
         blue: colors.blue,
         indigo: colors.indigo,
         violet: colors.violet,
@@ -31,8 +26,8 @@ module.exports = {
         rose: colors.rose,
       },
       cursor: {
-        'zoom-in': 'zoom-in',
-        'zoom-out': 'zoom-out',
+        "zoom-in": "zoom-in",
+        "zoom-out": "zoom-out",
       },
     },
   },
@@ -40,9 +35,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/line-clamp"),
   ],
 };

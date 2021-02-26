@@ -1,8 +1,8 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext } from "react";
 
 const ThemeContext = createContext({
-  theme: 'dark',
-  toggleTheme: () => { },
+  theme: "dark",
+  toggleTheme: () => {},
 });
 
 export default function ThemeContextProvider({ children, theme }) {
@@ -13,4 +13,4 @@ export default function ThemeContextProvider({ children, theme }) {
 
 export const useThemeContext = () => useContext(ThemeContext);
 
-export const isDarkTheme = theme => theme === 'dark';
+export const isDarkTheme = (theme) => theme === "dark";

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 export default class ErrorBoundary extends Component {
   state = { error: null };
@@ -15,7 +15,7 @@ export default class ErrorBoundary extends Component {
     const { children, fallback } = this.props;
     const { error } = this.state;
     if (error) {
-      if (typeof fallback === 'function') {
+      if (typeof fallback === "function") {
         return fallback(error, this._retry);
       }
       return fallback;

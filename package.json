@@ -5,46 +5,49 @@
   "homepage": "https://vpcvdc.github.io",
   "dependencies": {
     "@headlessui/react": "0.3.1",
-    "@tailwindcss/line-clamp": "0.2.0",
     "fbt": "0.16.1",
-    "history": "5.0.0",
-    "react": "0.0.0-experimental-6f8843837",
-    "react-dom": "0.0.0-experimental-6f8843837",
+    "react": "0.0.0-experimental-9209c30ff",
+    "react-dom": "0.0.0-experimental-9209c30ff",
     "web-vitals": "1.1.0",
-    "workbox-background-sync": "6.1.0",
-    "workbox-broadcast-update": "6.1.0",
-    "workbox-cacheable-response": "6.1.0",
-    "workbox-core": "6.1.0",
-    "workbox-expiration": "6.1.0",
-    "workbox-google-analytics": "6.1.0",
-    "workbox-navigation-preload": "6.1.0",
-    "workbox-precaching": "6.1.0",
-    "workbox-range-requests": "6.1.0",
-    "workbox-routing": "6.1.0",
-    "workbox-strategies": "6.1.0",
-    "workbox-streams": "6.1.0"
+    "workbox-background-sync": "6.1.1",
+    "workbox-broadcast-update": "6.1.1",
+    "workbox-cacheable-response": "6.1.1",
+    "workbox-core": "6.1.1",
+    "workbox-expiration": "6.1.1",
+    "workbox-google-analytics": "6.1.1",
+    "workbox-navigation-preload": "6.1.1",
+    "workbox-precaching": "6.1.1",
+    "workbox-range-requests": "6.1.1",
+    "workbox-routing": "6.1.1",
+    "workbox-strategies": "6.1.1",
+    "workbox-streams": "6.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.12.16",
-    "@babel/node": "7.12.16",
+    "@babel/core": "7.13.1",
+    "@babel/node": "7.13.0",
     "@craco/craco": "6.1.1",
     "@tailwindcss/aspect-ratio": "0.2.0",
     "@tailwindcss/forms": "0.2.1",
+    "@tailwindcss/line-clamp": "0.2.0",
     "@tailwindcss/postcss7-compat": "2.0.3",
     "@tailwindcss/typography": "0.4.0",
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
     "@testing-library/react-hooks": "5.0.3",
-    "@testing-library/user-event": "12.7.1",
+    "@testing-library/user-event": "12.7.3",
     "autoprefixer": "9.8.6",
     "babel-plugin-fbt": "0.17.1",
     "babel-plugin-fbt-runtime": "0.9.13",
     "gh-pages": "3.1.0",
+    "husky": "5.1.1",
     "postcss": "7.0.35",
-    "react-scripts": "4.0.2",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0",
+    "react-scripts": "4.0.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.0.3"
   },
   "scripts": {
+    "pretty-quick": "pretty-quick",
     "prefbt": "fbt-manifest --src src",
     "fbt": "fbt-collect --pretty --manifest < .src_manifest.json > .source_strings.json",
     "postfbt": "fbt-translate --translations translations/*.json --jenkins --output-dir src/locales",
@@ -73,5 +76,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

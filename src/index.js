@@ -1,11 +1,11 @@
-import { StrictMode } from 'react';
-import { unstable_createRoot as createRoot } from 'react-dom';
-import './index.css';
-import Root from './components/Root';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { StrictMode } from "react";
+import { unstable_createRoot as createRoot } from "react-dom";
+import "./index.css";
+import Root from "./components/Root";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // import reportWebVitals from './reportWebVitals';
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Root />
   </StrictMode>
@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')).render(
 serviceWorkerRegistration.register({
   onUpdate(registration) {
     if (registration.waiting) {
-      registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      registration.waiting.postMessage({ type: "SKIP_WAITING" });
     }
   },
 });
